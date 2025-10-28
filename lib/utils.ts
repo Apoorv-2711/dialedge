@@ -42,7 +42,7 @@ export function renderThankYouEmail(params: { name: string }): string {
           <p>Thanks for reaching out to DialEdge AI. We’ve received your message and a member of our team will get back to you shortly.</p>
           <p>In the meantime, you can reply to this email with any additional details you’d like to share.</p>
           <p style="margin: 24px 0 0 0;">
-            <a href="https://app.aiplacers.com" class="cta">Sign Up</a>
+            <a href="https://dialedge.ai" class="cta">Learn More</a>
           </p>
         </div>
         <div class="footer">
@@ -112,9 +112,9 @@ export function renderContactNotificationEmail(params: {
 }
 
 export function constructMetadata({
-  title = "DialEdge AI",
-  description = "DialEdge AI",
-  image = "https://www.aiplacers.com/og-image.jpg",
+  title = "DialEdge AI - Next-Gen Conversational AI Solutions",
+  description = "Transform your business communication with advanced conversational AI. Enterprise-grade phone systems, intelligent chat support, and automated workflows.",
+  image = "https://dialedge.ai/og-image.jpg",
   icons = "/favicon.ico",
   noIndex = false,
 }: {
@@ -130,14 +130,19 @@ export function constructMetadata({
     description,
     keywords: [
       "DialEdge AI",
-      "AI Voice Agents",
-      "AI Voice Generation",
-      "AI Voice Agents for Business",
-      "AI Voice Agents for Sales",
-      "AI Voice Agents for Marketing",
-      "AI Voice Agents for Customer Support",
-      "AI Voice Agents for Technical Support",
-      "AI Voice Agents for Financial Services",
+      "conversational AI",
+      "business communication",
+      "intelligent phone systems",
+      "chat support",
+      "automated workflows",
+      "enterprise AI",
+      "customer engagement",
+      "voice analytics",
+      "AI solutions",
+      "communication automation",
+      "smart scheduling",
+      "lead intelligence",
+      "enterprise security",
     ],
     authors: [
       {
@@ -148,10 +153,10 @@ export function constructMetadata({
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: "https://www.aiplacers.com",
+      url: "https://dialedge.ai",
       title,
       description,
-      siteName: title,
+      siteName: "DialEdge AI",
       images: [image],
     },
     twitter: {
@@ -159,11 +164,11 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@DialEdge AI",
+      creator: "@dialedgeai",
     },
     icons,
-    metadataBase: new URL("https://www.aiplacers.com"),
-    manifest: `${"https://www.aiplacers.com"}/site.webmanifest`,
+    metadataBase: new URL("https://dialedge.ai"),
+    manifest: `${"https://dialedge.ai"}/site.webmanifest`,
     ...(noIndex && {
       robots: {
         index: false,

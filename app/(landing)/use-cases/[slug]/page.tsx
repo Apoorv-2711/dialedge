@@ -17,10 +17,12 @@ export async function generateMetadata({
   const match = industries.find((i) => slugify(i.name) === slug);
   const name = match?.name;
   return {
-    title: name ? `${name} | AIPlacers Use Cases` : "Use Case | AIPlacers",
+    title: name
+      ? `${name} | DialEdge AI Solutions`
+      : "Industry Solutions | DialEdge AI",
     description: name
-      ? `Explore how AIPlacers empowers ${name} with AI voice solutions.`
-      : "Explore how AIPlacers empowers businesses with AI voice solutions.",
+      ? `Discover how DialEdge AI transforms ${name} with advanced conversational AI and intelligent communication solutions.`
+      : "Explore how DialEdge AI empowers businesses across industries with next-generation conversational AI solutions.",
   };
 }
 

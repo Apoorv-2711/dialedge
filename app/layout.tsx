@@ -28,9 +28,31 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "AI Placers - AI Voice Agents That Sound Human",
+  title: "DialEdge AI - Next-Gen Conversational AI Solutions",
   description:
-    "No-code AI voice agents with multilingual support that integrate seamlessly into your existing workflows. Deploy in minutes, scale instantly.",
+    "Transform your business communication with advanced conversational AI. Enterprise-grade phone systems, intelligent chat support, and automated workflows that scale your operations effortlessly.",
+  keywords:
+    "conversational AI, business communication, intelligent phone systems, chat support, automated workflows, enterprise AI, customer engagement, voice analytics, AI solutions",
+  authors: [{ name: "DialEdge AI" }],
+  creator: "DialEdge AI",
+  publisher: "DialEdge AI",
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://dialedge.ai",
+    title: "DialEdge AI - Next-Gen Conversational AI Solutions",
+    description:
+      "Transform your business communication with advanced conversational AI. Enterprise-grade solutions for modern businesses.",
+    siteName: "DialEdge AI",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DialEdge AI - Next-Gen Conversational AI Solutions",
+    description:
+      "Transform your business communication with advanced conversational AI. Enterprise-grade solutions for modern businesses.",
+    creator: "@dialedgeai",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -66,7 +88,7 @@ export default function RootLayout({
             gtag('config', 'G-NGCHRK3T8T');
           `}
         </Script>
-        <ThemeProvider defaultTheme="dark" storageKey="aiplacers-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="dialedge-theme">
           <main>{children}</main>
           <SonnerToaster richColors position="top-right" />
         </ThemeProvider>

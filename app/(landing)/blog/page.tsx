@@ -3,8 +3,9 @@ import { BlogPosts } from "@/components/content/blog-posts";
 import { allPosts } from "@/.contentlayer/generated";
 
 export const metadata = constructMetadata({
-  title: "Blog – AIPlacers",
-  description: "Read the latest articles from the AIPlacers blog",
+  title: "Blog – DialEdge AI",
+  description:
+    "Read the latest insights on conversational AI, business automation, and enterprise communication solutions from the DialEdge AI team.",
 });
 
 export default async function BlogPage() {

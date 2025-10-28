@@ -10,9 +10,9 @@ import {
 import { constructMetadata } from "@/lib/utils";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Pricing - AI Voice Agents | AIPlacers",
+  title: "Pricing - Conversational AI Solutions | DialEdge AI",
   description:
-    "Simple, transparent pricing for AI voice agents. Choose from Starter, Professional, or Enterprise plans. Start your 7-day free trial today.",
+    "Transparent pricing for enterprise-grade conversational AI solutions. Flexible plans designed to scale with your business. Contact us for custom enterprise solutions.",
 });
 
 export default function PricingPage() {

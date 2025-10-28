@@ -43,7 +43,7 @@ export async function generateMetadata({
   const { title, description, image, metaTitle, metaDescription } = post;
 
   return constructMetadata({
-    title: metaTitle ? `${metaTitle} – AIPlacers` : `${title} – AIPlacers`,
+    title: metaTitle ? `${metaTitle} – DialEdge AI` : `${title} – DialEdge AI`,
     description: metaDescription || description,
     image,
     keywords: post.tags,
