@@ -113,7 +113,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           {/* Navigation Columns - Right Side */}
-          <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
+          <div className="lg:col-span-3 grid md:grid-cols-2 gap-8">
             {/* Company Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -127,28 +127,24 @@ export function Footer({ className }: FooterProps) {
               <ul className="space-y-4">
                 {[
                   {
-                    name: "About",
-                    href: "/about",
+                    name: "Services",
+                    href: "/#services",
                   },
                   {
-                    name: "Contact",
-                    href: "/#contact",
+                    name: "How It Works",
+                    href: "/#how-it-works",
                   },
                   {
-                    name: "Blog",
-                    href: "/blog",
+                    name: "Testimonials",
+                    href: "/#testimonials",
                   },
                   {
-                    name: "Use Cases",
-                    href: "/use-cases",
-                  },
-                  {
-                    name: "Features",
-                    href: "/features",
+                    name: "Pricing",
+                    href: "/#pricing",
                   },
                   {
                     name: "Terms & Conditions",
-                    href: "/terms",
+                    href: "",
                   },
                 ].map((item) => (
                   <li key={item.name}>
@@ -164,7 +160,7 @@ export function Footer({ className }: FooterProps) {
             </motion.div>
 
             {/* Products Column */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -193,7 +189,7 @@ export function Footer({ className }: FooterProps) {
                   </a>
                 </li>
               </ul>
-            </motion.div>
+            </motion.div> */}
 
             {/* Resources Column */}
             <motion.div

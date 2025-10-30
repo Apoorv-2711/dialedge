@@ -22,7 +22,7 @@ export function CompanyLogosSection() {
     <section className="py-16">
       <div className="">
         <motion.div
-          className="text-center mb-12 container"
+          className="text-center mb-12 container "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ export function CompanyLogosSection() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee className="[--duration:20s]">
             {[
               "TechCorp",
               "RestaurantCo",
@@ -60,8 +60,8 @@ export function CompanyLogosSection() {
               </motion.div>
             ))}
           </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background" />
         </motion.div>
       </div>
     </section>

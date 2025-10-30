@@ -17,12 +17,17 @@ import {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div
+      className="min-h-screen relative overflow-hidden 
+   
+      bg-gradient-to-br from-background to-primary/5 dark:from-background dark:to-secondary/5
+      "
+    >
       <HeroSection />
       <ContactFormSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <CompanyLogosSection />
-      <KeyMetricsSection />
+      {/* <KeyMetricsSection /> */}
       <ServicesSection />
       <ComparisonTableSection />
       <BenefitsSection />

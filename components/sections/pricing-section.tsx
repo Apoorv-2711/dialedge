@@ -111,7 +111,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -133,7 +133,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                 "Email Support; 24-hour response time",
               ],
               cta: "Start Free Trial",
-              ctaLink: "https://app.aiplacers.com/login",
+              ctaLink: "/#contact",
               ctaDescription: "7-day free trial • 30 min included",
               popular: false,
             },
@@ -154,32 +154,32 @@ export function PricingSection({ isShowHeader = true }: Props) {
                 "24/7 Chat Support; Instant response time",
               ],
               cta: "Start Free Trial",
-              ctaLink: "https://app.aiplacers.com/login",
+              ctaLink: "/#contact",
               ctaDescription: "7-day free trial • 30 min included",
               popular: true,
             },
-            {
-              name: "Business",
-              subtitle: "For Large Organizations",
-              monthlyPrice: 299,
-              yearlyPrice: 2509,
-              originalYearlyPrice: 3588,
-              description: "Ideal for larger practices and multiple locations",
-              header: "Everything in Professional, plus:",
-              features: [
-                "Unlimited agent deployment; Scale without limits",
-                "1500 minutes/month; $0.20 per additional minute",
-                "1 full AI employee; Advanced AI capabilities",
-                "Advanced integrations; 1000+ applications",
-                "VIP Support; 2-hour response time",
-                "Dedicated CSM; Personal account management",
-                "24/7 Chat Support; Instant response time",
-              ],
-              cta: "Start Free Trial",
-              ctaLink: "https://app.aiplacers.com/login",
-              ctaDescription: "7-day free trial • 60 min included",
-              popular: false,
-            },
+            // {
+            //   name: "Business",
+            //   subtitle: "For Large Organizations",
+            //   monthlyPrice: 299,
+            //   yearlyPrice: 2509,
+            //   originalYearlyPrice: 3588,
+            //   description: "Ideal for larger practices and multiple locations",
+            //   header: "Everything in Professional, plus:",
+            //   features: [
+            //     "Unlimited agent deployment; Scale without limits",
+            //     "1500 minutes/month; $0.20 per additional minute",
+            //     "1 full AI employee; Advanced AI capabilities",
+            //     "Advanced integrations; 1000+ applications",
+            //     "VIP Support; 2-hour response time",
+            //     "Dedicated CSM; Personal account management",
+            //     "24/7 Chat Support; Instant response time",
+            //   ],
+            //   cta: "Start Free Trial",
+            //   ctaLink: "https://app.aiplacers.com/login",
+            //   ctaDescription: "7-day free trial • 60 min included",
+            //   popular: false,
+            // },
             {
               name: "Enterprise",
               subtitle: "For Enterprise",
@@ -203,7 +203,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
           ].map((plan, index) => (
             <motion.div key={index} variants={fadeInUp}>
               <Card
-                className={`h-full relative dark:bg-gray-500/5 ${
+                className={`h-full relative dark:bg-secondary/10 ${
                   plan.popular ? "border-primary shadow-lg " : ""
                 }
                 `}

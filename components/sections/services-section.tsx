@@ -12,130 +12,235 @@ import {
   Shield,
   BarChart3,
   Brain,
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+  Bot,
 } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export function ServicesSection() {
+  const services = [
+    {
+      title: "AI-Powered Phone System",
+      description:
+        "Advanced call routing, natural conversation handling, and 24/7 customer support with intelligent voice recognition.",
+      icon: Phone,
+      features: [
+        "Smart Call Routing",
+        "Voice Recognition",
+        "24/7 Availability",
+      ],
+      category: "Voice Solutions",
+    },
+    {
+      title: "Conversational Chat AI",
+      description:
+        "Multi-channel chat support across web, mobile, and social platforms with contextual understanding and personalization.",
+      icon: MessageSquare,
+      features: [
+        "Multi-Channel Support",
+        "Context Awareness",
+        "Real-time Responses",
+      ],
+      category: "Chat Solutions",
+    },
+    {
+      title: "Intelligent Analytics",
+      description:
+        "Real-time conversation analytics and insights to optimize customer interactions and improve business intelligence.",
+      icon: BarChart3,
+      features: [
+        "Real-time Analytics",
+        "Performance Insights",
+        "Custom Reports",
+      ],
+      category: "Analytics",
+    },
+    {
+      title: "Workflow Automation",
+      description:
+        "Seamless integration with existing systems to automate repetitive tasks and streamline business operations.",
+      icon: Zap,
+      features: [
+        "System Integration",
+        "Task Automation",
+        "Workflow Optimization",
+      ],
+      category: "Automation",
+    },
+    {
+      title: "Smart Scheduling",
+      description:
+        "Intelligent appointment management with automated booking, reminders, and calendar synchronization.",
+      icon: Clock,
+      features: ["Auto Booking", "Smart Reminders", "Calendar Sync"],
+      category: "Scheduling",
+    },
+    {
+      title: "Customer Journey Tracking",
+      description:
+        "Advanced analytics that track customer interactions across touchpoints to improve satisfaction and retention.",
+      icon: Users,
+      features: [
+        "Journey Mapping",
+        "Touchpoint Analysis",
+        "Retention Insights",
+      ],
+      category: "Analytics",
+    },
+  ];
+
   return (
-    <section id="services" className="py-20 gradient-bg-primary">
-      <div className="container">
+    <section id="services" className="relative py-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.03]" />
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="absolute top-20 right-10 w-80 h-80 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 60%)",
+            opacity: 0.06,
+          }}
+          animate={{
+            x: [0, -30, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 left-20 w-60 h-60 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, hsl(var(--secondary)) 0%, transparent 60%)",
+            opacity: 0.04,
+          }}
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -20, 0],
+            scale: [1.1, 1, 1.1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5,
+          }}
+        />
+
+        {/* Floating Geometric Elements */}
+        <motion.div
+          className="absolute top-1/3 left-10 w-16 h-16 border-2 border-primary/10 rounded-2xl"
+          animate={{
+            rotate: [0, 180, 0],
+            y: [-10, 10, -10],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <div className="container relative z-10">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="text-center max-w-4xl mx-auto mb-16"
         >
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2 rounded-full">
-            <Brain className="w-4 h-4 mr-2" />
-            AI-Powered Solutions
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Comprehensive AI Communication Solutions
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <span className="text-foreground">Comprehensive </span>
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              AI Communication
+            </span>
+            <span className="text-foreground"> Platform</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Intelligent conversational AI solutions that streamline operations
-            and enhance customer experiences across all touchpoints
+
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Transform your customer interactions with intelligent AI solutions
+            designed to streamline operations, enhance experiences, and drive
+            business growth across all touchpoints.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
-          {[
-            {
-              title: "Intelligent Call Routing",
-              description:
-                "Advanced AI-powered phone systems that intelligently route calls, handle inquiries, and provide 24/7 customer support with natural conversations.",
-              icon: Phone,
-              gradient: "from-blue-500 to-cyan-500",
-            },
-            {
-              title: "Smart Chat Support",
-              description:
-                "Multi-channel conversational AI that provides instant customer assistance across web, mobile, and social platforms with contextual understanding.",
-              icon: MessageSquare,
-              gradient: "from-green-500 to-emerald-500",
-            },
-            {
-              title: "Voice Analytics & Insights",
-              description:
-                "Real-time conversation analytics that extract valuable insights from customer interactions to improve service quality and business intelligence.",
-              icon: BarChart3,
-              gradient: "from-purple-500 to-pink-500",
-            },
-            {
-              title: "Automated Workflows",
-              description:
-                "Seamless integration with existing business systems to automate repetitive tasks and streamline operations across departments.",
-              icon: Zap,
-              gradient: "from-orange-500 to-red-500",
-            },
-            {
-              title: "Smart Scheduling System",
-              description:
-                "Intelligent appointment management with automated booking, rescheduling, reminders, and seamless calendar synchronization across platforms.",
-              icon: Clock,
-              gradient: "from-indigo-500 to-purple-500",
-            },
-            {
-              title: "Customer Journey Mapping",
-              description:
-                "Advanced analytics that track and optimize customer interactions across all touchpoints to improve satisfaction and retention rates.",
-              icon: Users,
-              gradient: "from-teal-500 to-blue-500",
-            },
-            {
-              title: "Lead Intelligence Platform",
-              description:
-                "Automated lead qualification and nurturing system with intelligent scoring, personalized outreach, and CRM integration for higher conversions.",
-              icon: TrendingUp,
-              gradient: "from-yellow-500 to-orange-500",
-            },
-            {
-              title: "Enterprise Security Suite",
-              description:
-                "Bank-grade security infrastructure with end-to-end encryption, compliance monitoring, and data protection for sensitive communications.",
-              icon: Shield,
-              gradient: "from-pink-500 to-rose-500",
-            },
-          ].map((service, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <motion.div
-                className="glass rounded-3xl p-6 h-full group hover:scale-105 transition-all duration-300"
-                whileHover={{ y: -5 }}
-              >
-                <div
-                  className={`w-14 h-14 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <service.icon className="h-7 w-7 text-white" />
+        {/* Services Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              className="group relative"
+            >
+              <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 h-full hover:border-primary/30 transition-all duration-300 dark:bg-secondary/10 cursor-default">
+                {/* Category Badge */}
+                <div className="absolute top-6 right-6">
+                  <Badge
+                    variant="outline"
+                    className="text-xs bg-primary/10 border-primary/20 text-primary dark:bg-secondary/10 dark:border-secondary/20 dark:text-secondary"
+                  >
+                    {service.category}
+                  </Badge>
                 </div>
-                <h3 className="text-lg font-bold mb-3 gradient-text">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
+
+                {/* Icon */}
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-primary-foreground" />
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-card-foreground group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <div className="space-y-2 pt-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <div
+                        key={feature}
+                        className="flex items-center gap-2 text-sm"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Learn More Button */}
+                  {/* <div className="pt-4">
+                    <button className="group/btn inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all duration-200">
+                      Learn more
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div> */}
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

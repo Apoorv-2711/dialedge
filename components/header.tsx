@@ -17,7 +17,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { industries, slugify } from "@/lib/industries";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 
 interface HeaderProps {
@@ -47,7 +46,7 @@ export function Header({ className }: HeaderProps) {
     { name: "How It Works", href: "/#how-it-works" },
     { name: "Testimonials", href: "/#testimonials" },
     { name: "Pricing", href: "/#pricing" },
-    { name: "Features", href: "/features", isActive: pathname === "/features" },
+    // { name: "Features", href: "/features", isActive: pathname === "/features" },
     // {
     //   name: "Use Case",
     //   href: "/use-cases",
@@ -61,7 +60,12 @@ export function Header({ className }: HeaderProps) {
     //     })),
     //   ],
     // },
-    { name: "About Us", href: "/about", isActive: pathname === "/about" },
+    // { name: "About Us", href: "/about", isActive: pathname === "/about" },
+    {
+      name: "Contact Us",
+      href: "/#contact",
+      isActive: pathname === "/#contact",
+    },
   ];
 
   const NavigationLinks = () => (
@@ -138,7 +142,7 @@ export function Header({ className }: HeaderProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container flex h-20 items-center justify-between mx-auto px-4 max-w-7xl">
+      <div className="container flex h-16 items-center justify-between mx-auto px-4 max-w-7xl">
         <motion.div
           className="flex items-center space-x-3"
           whileHover={{ scale: 1.05 }}
@@ -157,7 +161,7 @@ export function Header({ className }: HeaderProps) {
               </Link>
               <Link href="/">
                 <Image
-                  src={"/aiplacers-small-logo.png"}
+                  src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
                   alt="DialEdge AI"
                   width={150}
                   height={100}
@@ -175,14 +179,14 @@ export function Header({ className }: HeaderProps) {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <Link href="#book-demo" target="_blank">
+          <Link href="#book-demo">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-6 py-2 rounded-full shadow-lg">
                 Book a Demo
               </Button>
             </motion.div>
           </Link>
-          <Link href="#sign-up" target="_blank">
+          <Link href="#sign-up">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"

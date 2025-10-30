@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Sparkles } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="relative py-16 overflow-hidden">
+    <section className="relative py-16 overflow-hidden dark:bg-secondary/10">
       {/* Floating orbs */}
       <motion.div
         className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full blur-xl"
@@ -33,115 +34,51 @@ export function CTASection() {
         }}
       />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 max-w-5xl mx-auto">
+        {/* Bottom CTA Section */}
         <motion.div
-          className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          className="relative bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 rounded-3xl p-8 lg:p-12 text-center dark:bg-secondary/10 dark:border dark:border-secondary/20"
         >
-          {/* Glassmorphism container */}
-          <div className="backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 rounded-2xl p-8 shadow-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-work-sans)]">
-                <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                  Ready to Deploy Your
-                </span>
-                <br />
-                <span className="text-foreground">AI Agent?</span>
-              </h2>
-            </motion.div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                Ready to Transform Your Business?
+              </h3>
+              <Sparkles className="w-6 h-6 text-secondary" />
+            </div>
 
-            <motion.p
-              className="text-lg md:text-xl mb-6 text-muted-foreground max-w-xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              Join{" "}
-              <span className="text-primary font-semibold">
-                100+ businesses
-              </span>{" "}
-              already saving time and money with AI employees.
-            </motion.p>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses already using DialEdge AI to
+              revolutionize their customer interactions and drive unprecedented
+              growth.
+            </p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link
-                href="https://calendly.com/bg-aiplacers/new-meeting"
-                target="_blank"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 py-3 text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Book a Demo
-                    <motion.div
-                      className="ml-2"
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Number.POSITIVE_INFINITY,
-                      }}
-                    >
-                      →
-                    </motion.div>
-                  </Button>
-                </motion.div>
-              </Link>
-              <Link href="https://app.aiplacers.com/" target="_blank">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-primary/50 cursor-pointer hover:border-primary bg-transparent hover:bg-primary/10 text-foreground px-6 py-3 text-base font-semibold rounded-full backdrop-blur-sm dark:border-primary dark:hover:border-primary/80 dark:hover:bg-primary/10 dark:text-white"
-                  >
-                    Start Free Trial
-                  </Button>
-                </motion.div>
-              </Link>
-            </motion.div>
+                Start Free Trial
+              </motion.button>
 
-            {/* Trust indicators */}
-            <motion.div
-              className="flex flex-wrap justify-center items-center gap-6 text-xs text-muted-foreground"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                <span>No-code setup</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
-                <span>7-day free trial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
-                <span>24/7 support included</span>
-              </div>
-            </motion.div>
+              <button className="text-primary font-medium px-6 py-4 rounded-2xl border border-primary/30 hover:bg-primary/10 transition-all duration-300">
+                View All Features
+              </button>
+            </div>
+          </div>
+
+          {/* Background Pattern */}
+          <div className="absolute inset-0 rounded-3xl opacity-30">
+            <div className="absolute top-4 left-4 w-8 h-8 border border-primary/20 rounded-lg" />
+            <div className="absolute top-8 right-8 w-6 h-6 bg-secondary/20 rounded-full" />
+            <div className="absolute bottom-6 left-8 w-4 h-4 bg-primary/20 rounded-full" />
+            <div className="absolute bottom-4 right-6 w-10 h-10 border border-secondary/20 rounded-2xl" />
           </div>
         </motion.div>
       </div>
