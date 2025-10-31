@@ -16,39 +16,35 @@ interface ContactPayload {
   email: string;
   phone?: string;
   company?: string;
-  recaptchaToken: string;
 }
 
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-
-  if (!secretKey) {
-    console.error("RECAPTCHA_SECRET_KEY not configured");
-    return false;
-  }
-
-  try {
-    const response = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          secret: secretKey,
-          response: token,
-        }),
-      }
-    );
-
-    const result = await response.json();
-    return result.success === true;
-  } catch (error) {
-    console.error("reCAPTCHA verification failed:", error);
-    return false;
-  }
-}
+// async function verifyRecaptcha(token: string): Promise<boolean> {
+//   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+//   if (!secretKey) {
+//     console.error("RECAPTCHA_SECRET_KEY not configured");
+//     return false;
+//   }
+//   try {
+//     const response = await fetch(
+//       "https://www.google.com/recaptcha/api/siteverify",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/x-www-form-urlencoded",
+//         },
+//         body: new URLSearchParams({
+//           secret: secretKey,
+//           response: token,
+//         }),
+//       }
+//     );
+//     const result = await response.json();
+//     return result.success === true;
+//   } catch (error) {
+//     console.error("reCAPTCHA verification failed:", error);
+//     return false;
+//   }
+// }
 
 export async function submitContact(payload: ContactPayload) {
   // Get request headers and extract client information
@@ -74,65 +70,65 @@ export async function submitContact(payload: ContactPayload) {
   );
 
   // Verify reCAPTCHA
-  const isRecaptchaValid = await verifyRecaptcha(payload.recaptchaToken);
-  if (!isRecaptchaValid) {
-    return {
-      ok: false,
-      error: "reCAPTCHA verification failed. Please try again.",
-      recaptchaFailed: true,
-    };
-  }
+  // const isRecaptchaValid = await verifyRecaptcha(payload.recaptchaToken);
+  // if (!isRecaptchaValid) {
+  //   return {
+  //     ok: false,
+  //     error: "reCAPTCHA verification failed. Please try again.",
+  //     recaptchaFailed: true,
+  //   };
+  // }
 
-  console.log(`[Contact] reCAPTCHA verification passed for IP ${clientIP}`);
+  // console.log(`[Contact] reCAPTCHA verification passed for IP ${clientIP}`);
 
   // Business email validation
-  function isBusinessEmail(email: string) {
-    const atIndex = email.lastIndexOf("@");
-    if (atIndex <= 0) return false;
-    const domain = email
-      .slice(atIndex + 1)
-      .toLowerCase()
-      .trim();
-    const blockedDomains = new Set([
-      "gmail.com",
-      "yahoo.com",
-      "yahoo.co.uk",
-      "hotmail.com",
-      "outlook.com",
-      "outlook.co.uk",
-      "live.com",
-      "msn.com",
-      "icloud.com",
-      "me.com",
-      "mac.com",
-      "aol.com",
-      "proton.me",
-      "protonmail.com",
-      "pm.me",
-      "gmx.com",
-      "gmx.de",
-      "mail.com",
-      "yandex.com",
-      "yandex.ru",
-      "zoho.com",
-      "fastmail.com",
-      "hey.com",
-      "duck.com",
-      "inbox.com",
-      "tutanota.com",
-      "tutanota.de",
-      "tuta.io",
-      "yopmail.com",
-    ]);
-    if (blockedDomains.has(domain)) return false;
-    if (!domain.includes(".")) return false;
-    if (/^\d+\.\d+\.\d+\.\d+$/.test(domain)) return false;
-    return true;
-  }
+  // function isBusinessEmail(email: string) {
+  //   const atIndex = email.lastIndexOf("@");
+  //   if (atIndex <= 0) return false;
+  //   const domain = email
+  //     .slice(atIndex + 1)
+  //     .toLowerCase()
+  //     .trim();
+  //   const blockedDomains = new Set([
+  //     "gmail.com",
+  //     "yahoo.com",
+  //     "yahoo.co.uk",
+  //     "hotmail.com",
+  //     "outlook.com",
+  //     "outlook.co.uk",
+  //     "live.com",
+  //     "msn.com",
+  //     "icloud.com",
+  //     "me.com",
+  //     "mac.com",
+  //     "aol.com",
+  //     "proton.me",
+  //     "protonmail.com",
+  //     "pm.me",
+  //     "gmx.com",
+  //     "gmx.de",
+  //     "mail.com",
+  //     "yandex.com",
+  //     "yandex.ru",
+  //     "zoho.com",
+  //     "fastmail.com",
+  //     "hey.com",
+  //     "duck.com",
+  //     "inbox.com",
+  //     "tutanota.com",
+  //     "tutanota.de",
+  //     "tuta.io",
+  //     "yopmail.com",
+  //   ]);
+  //   if (blockedDomains.has(domain)) return false;
+  //   if (!domain.includes(".")) return false;
+  //   if (/^\d+\.\d+\.\d+\.\d+$/.test(domain)) return false;
+  //   return true;
+  // }
 
-  if (!isBusinessEmail(payload.email)) {
-    return { ok: false, error: "Please use a business email address." };
-  }
+  // if (!isBusinessEmail(payload.email)) {
+  //   return { ok: false, error: "Please use a business email address." };
+  // }
 
   // Prepare enhanced payload with metadata
   const enhancedPayload = {
@@ -171,7 +167,7 @@ export async function submitContact(payload: ContactPayload) {
     });
 
     const fromAddress =
-      process.env.MAIL_FROM || "DialEdge AI <no-reply@aiplacers.com>";
+      process.env.MAIL_FROM || "DialEdge AI <no-reply@dialedge.ai>";
 
     // Customer thank-you
     await transporter.sendMail({
@@ -201,29 +197,29 @@ export async function submitContact(payload: ContactPayload) {
   }
 
   // Post to external webhook (best-effort) with enhanced metadata
-  try {
-    const webhookUrl = process.env.WEBHOOK_URL;
-    if (webhookUrl) {
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-make-apikey": process.env.WEBHOOK_API_KEY || "",
-          "x-client-ip": clientIP,
-          "x-user-agent": requestMetadata.userAgent,
-        },
-        body: JSON.stringify(enhancedPayload),
-      });
+  // try {
+  //   const webhookUrl = process.env.WEBHOOK_URL;
+  //   if (webhookUrl) {
+  //     const response = await fetch(webhookUrl, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "x-make-apikey": process.env.WEBHOOK_API_KEY || "",
+  //         "x-client-ip": clientIP,
+  //         "x-user-agent": requestMetadata.userAgent,
+  //       },
+  //       body: JSON.stringify(enhancedPayload),
+  //     });
 
-      if (!response.ok) {
-        console.error(`Webhook responded with status ${response.status}`);
-      } else {
-        console.log("Successfully posted to webhook with enhanced metadata");
-      }
-    }
-  } catch (err) {
-    console.error("Failed to POST to webhook", err);
-  }
+  //     if (!response.ok) {
+  //       console.error(`Webhook responded with status ${response.status}`);
+  //     } else {
+  //       console.log("Successfully posted to webhook with enhanced metadata");
+  //     }
+  //   }
+  // } catch (err) {
+  //   console.error("Failed to POST to webhook", err);
+  // }
 
   // Post to Google Form (best-effort)
 

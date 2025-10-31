@@ -23,6 +23,7 @@ import {
   BarChart3,
   CheckCircle2,
   Sparkles,
+  Phone,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -30,42 +31,42 @@ export function HowItWorksSection() {
   const steps = [
     {
       step: "01",
-      title: "Strategic Assessment & Design",
+      title: "Initial Consultation",
       description:
-        "Our experts analyze your business needs and design custom AI communication solutions tailored to your industry and workflows.",
-      icon: Settings,
+        "We start with a quick consultation to understand your business goals, call workflows, and tone of voice. Then we tailor your Al calling agent to match your brand perfectly - whether for inbound support or outbound sales.",
+      icon: Phone,
       features: [
-        "Business process analysis",
-        "Custom solution architecture",
-        "Integration planning",
+        // "Business process analysis",
+        // "Custom solution architecture",
+        // "Integration planning",
       ],
       color: "from-blue-500 to-indigo-600",
       bgColor: "bg-blue-500/10",
     },
     {
       step: "02",
-      title: "Seamless Implementation",
+      title: "Integration & Testing",
       description:
-        "Deploy across all communication channels with enterprise-grade security and minimal disruption to existing operations.",
-      icon: Rocket,
+        "Our team connects your Al agent to your phone systems or CRM, tests every scenario, and ensures calls sound human, responsive, and accurate. You get zero-hassle setup and a fully tested, ready-to-launch solution.",
+      icon: Settings,
       features: [
-        "Multi-channel deployment",
-        "Enterprise security protocols",
-        "Staff training & support",
+        // "Multi-channel deployment",
+        // "Enterprise security protocols",
+        // "Staff training & support",
       ],
       color: "from-emerald-500 to-teal-600",
       bgColor: "bg-emerald-500/10",
     },
     {
       step: "03",
-      title: "Continuous Optimization",
+      title: "Go Live",
       description:
-        "Monitor performance metrics, gather insights, and continuously optimize AI responses for maximum business impact.",
-      icon: TrendingUp,
+        "In just 24 hours, your Al agent starts answering or making calls for your business, instantly reducing missed calls and boosting conversions. Your business is now available 24/7 - powered by Al.",
+      icon: Rocket,
       features: [
-        "Advanced analytics dashboard",
-        "Performance optimization",
-        "Ongoing strategic support",
+        // "Advanced analytics dashboard",
+        // "Performance optimization",
+        // "Ongoing strategic support",
       ],
       color: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-500/10",

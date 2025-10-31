@@ -120,80 +120,64 @@ export function PricingSection({ isShowHeader = true }: Props) {
           {[
             {
               name: "Starter",
-              subtitle: "For Small Teams",
-              monthlyPrice: 49,
-              yearlyPrice: 409,
-              originalYearlyPrice: 588,
-              description: "Perfect for small businesses getting started",
+              subtitle: "For Small Businesses",
+              monthlyPrice: 3999,
+              yearlyPrice: 33592,
+              originalYearlyPrice: 47988,
+              description:
+                "Perfect for businesses getting started with AI voice agents",
               features: [
-                "1 AI Voice Agent; Fully customizable personality",
-                "100 minutes/month; $0.30 per additional minute",
-                "Inbound & Outbound Calls; Phone system integration",
-                "Basic Integrations; CRM, Calendar, Email",
-                "Email Support; 24-hour response time",
+                "Less than 200 calls/month; 300 minutes included",
+                "English & Hindi Support; Bilingual voice agent",
+                "Automatic Email Alerts; Real-time notifications",
+                "Call Summaries; Detailed interaction reports",
+                "Site Visit Tracking; Monitor customer engagement",
+                "Basic Integration; CRM and Calendar sync",
               ],
               cta: "Start Free Trial",
               ctaLink: "/#contact",
-              ctaDescription: "7-day free trial • 30 min included",
+              ctaDescription: "7-day free trial • Setup assistance included",
               popular: false,
             },
             {
-              name: "Professional",
+              name: "Growth",
               subtitle: "For Growing Companies",
-              monthlyPrice: 149,
-              yearlyPrice: 1249,
-              originalYearlyPrice: 1788,
-              description: "Ideal for scaling businesses",
+              monthlyPrice: 5999,
+              yearlyPrice: 50392,
+              originalYearlyPrice: 71988,
+              description: "Ideal for businesses scaling their operations",
               header: "Everything in Starter, plus:",
               features: [
-                "3 Phone Numbers; Multiple agent deployment",
-                "500 minutes/month; $0.25 per additional minute",
-                "Advanced Integrations; Salesforce, HubSpot, Zapier",
+                "200-500 calls/month; 600 minutes included",
+                "English & Hindi Support; Advanced language processing",
+                "Automatic Email Alerts; Priority notification system",
+                "Advanced Call Summaries; Detailed analytics & insights",
+                "Enhanced Site Visit Tracking; Customer journey mapping",
                 "Priority Support; 4-hour response time",
-                "Dedicated Onboarding; Personal setup assistance",
-                "24/7 Chat Support; Instant response time",
+                "Advanced Integrations; Multiple CRM platforms",
               ],
               cta: "Start Free Trial",
               ctaLink: "/#contact",
-              ctaDescription: "7-day free trial • 30 min included",
+              ctaDescription: "7-day free trial • Dedicated onboarding",
               popular: true,
             },
-            // {
-            //   name: "Business",
-            //   subtitle: "For Large Organizations",
-            //   monthlyPrice: 299,
-            //   yearlyPrice: 2509,
-            //   originalYearlyPrice: 3588,
-            //   description: "Ideal for larger practices and multiple locations",
-            //   header: "Everything in Professional, plus:",
-            //   features: [
-            //     "Unlimited agent deployment; Scale without limits",
-            //     "1500 minutes/month; $0.20 per additional minute",
-            //     "1 full AI employee; Advanced AI capabilities",
-            //     "Advanced integrations; 1000+ applications",
-            //     "VIP Support; 2-hour response time",
-            //     "Dedicated CSM; Personal account management",
-            //     "24/7 Chat Support; Instant response time",
-            //   ],
-            //   cta: "Start Free Trial",
-            //   ctaLink: "https://app.aiplacers.com/login",
-            //   ctaDescription: "7-day free trial • 60 min included",
-            //   popular: false,
-            // },
             {
-              name: "Enterprise",
-              subtitle: "For Enterprise",
+              name: "Custom",
+              subtitle: "For High Volume Operations",
               monthlyPrice: null,
               yearlyPrice: null,
               originalYearlyPrice: null,
-              description: "Tailored solutions for enterprise needs",
-              header: "Everything in Business, plus:",
+              description:
+                "Tailored solutions for enterprise-level call volumes",
+              header: "Everything in Growth, plus:",
               features: [
-                "Unlimited Agents & Minutes; Scale without limits",
-                "Enterprise Security; SOC 2, HIPAA, GDPR compliant",
-                "Dedicated Support & CSM; 1-hour response time",
-                "Custom Integrations; API access & custom development",
-                "Dedicated Data Protection Officer (DPO); GDPR compliance & data security",
+                "500+ calls/month; Unlimited call handling capacity",
+                "Multiple Properties Support; Multi-location management",
+                "Custom Voice Agents; Personalized AI personalities",
+                "Advanced Analytics; Comprehensive business intelligence",
+                "Dedicated Account Manager; Personal relationship management",
+                "Custom Integrations; Bespoke API development",
+                "24/7 Priority Support; Instant expert assistance",
               ],
               cta: "Contact Sales",
               ctaLink: "/#contact",
@@ -235,7 +219,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.3 }}
                             >
-                              ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                              ₹{isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                             </motion.span>
                           </AnimatePresence>
                           <AnimatePresence mode="wait">
@@ -266,7 +250,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.1 }}
                               >
-                                ${plan.originalYearlyPrice}/year
+                                ₹{plan.originalYearlyPrice}/year
                               </motion.span>
                               <motion.div
                                 className="inline-block ml-1"
@@ -278,7 +262,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                                   variant="secondary"
                                   className="text-xs px-1 py-0"
                                 >
-                                  Save $
+                                  Save ₹
                                   {plan.originalYearlyPrice - plan.yearlyPrice}
                                 </Badge>
                               </motion.div>
@@ -355,8 +339,8 @@ export function PricingSection({ isShowHeader = true }: Props) {
           viewport={{ once: true }}
         >
           <p className="text-sm text-muted-foreground max-w-4xl mx-auto">
-            All plans include: 50+ languages • No-code setup • 24/7 availability
-            • Cancel anytime
+            All plans include: English & Hindi support • No-code setup • 24/7
+            availability • Cancel anytime • GST applicable
           </p>
         </motion.div>
       </div>

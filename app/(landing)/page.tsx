@@ -4,6 +4,7 @@ import {
   CompanyLogosSection,
   KeyMetricsSection,
   ServicesSection,
+  ClientsWeServeSection,
   ComparisonTableSection,
   BenefitsSection,
   HowItWorksSection,
@@ -29,12 +30,13 @@ export default function HomePage() {
       <CompanyLogosSection />
       {/* <KeyMetricsSection /> */}
       <ServicesSection />
+      <ClientsWeServeSection />
       <ComparisonTableSection />
       <BenefitsSection />
       <HowItWorksSection />
       <TestimonialsSection />
       <PricingSection />
-      <SecuritySection />
+      {/* <SecuritySection /> */}
       <FaqSection />
       <CTASection />
     </div>

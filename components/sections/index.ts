@@ -3,6 +3,7 @@ export { StatsSection } from "./stats-section";
 export { CompanyLogosSection } from "./company-logos-section";
 export { KeyMetricsSection } from "./key-metrics-section";
 export { ServicesSection } from "./services-section";
+export { ClientsWeServeSection } from "./clients-we-serve-section";
 export { ComparisonTableSection } from "./comparison-table-section";
 export { BenefitsSection } from "./benefits-section";
 export { HowItWorksSection } from "./how-it-works-section";

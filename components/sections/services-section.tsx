@@ -23,10 +23,10 @@ export function ServicesSection() {
     {
       title: "AI-Powered Phone System",
       description:
-        "Advanced call routing, natural conversation handling, and 24/7 customer support with intelligent voice recognition.",
+        "Advanced call handling, natural conversation handling, and 24/7 customer support with intelligent voice recognition.",
       icon: Phone,
       features: [
-        "Smart Call Routing",
+        "Smart Call Handling",
         "Voice Recognition",
         "24/7 Availability",
       ],
@@ -44,18 +44,18 @@ export function ServicesSection() {
       ],
       category: "Chat Solutions",
     },
-    {
-      title: "Intelligent Analytics",
-      description:
-        "Real-time conversation analytics and insights to optimize customer interactions and improve business intelligence.",
-      icon: BarChart3,
-      features: [
-        "Real-time Analytics",
-        "Performance Insights",
-        "Custom Reports",
-      ],
-      category: "Analytics",
-    },
+    // {
+    //   title: "Intelligent Analytics",
+    //   description:
+    //     "Real-time conversation analytics and insights to optimize customer interactions and improve business intelligence.",
+    //   icon: BarChart3,
+    //   features: [
+    //     "Real-time Analytics",
+    //     "Performance Insights",
+    //     "Custom Reports",
+    //   ],
+    //   category: "Analytics",
+    // },
     {
       title: "Workflow Automation",
       description:
@@ -76,18 +76,18 @@ export function ServicesSection() {
       features: ["Auto Booking", "Smart Reminders", "Calendar Sync"],
       category: "Scheduling",
     },
-    {
-      title: "Customer Journey Tracking",
-      description:
-        "Advanced analytics that track customer interactions across touchpoints to improve satisfaction and retention.",
-      icon: Users,
-      features: [
-        "Journey Mapping",
-        "Touchpoint Analysis",
-        "Retention Insights",
-      ],
-      category: "Analytics",
-    },
+    // {
+    //   title: "Customer Journey Tracking",
+    //   description:
+    //     "Advanced analytics that track customer interactions across touchpoints to improve satisfaction and retention.",
+    //   icon: Users,
+    //   features: [
+    //     "Journey Mapping",
+    //     "Touchpoint Analysis",
+    //     "Retention Insights",
+    //   ],
+    //   category: "Analytics",
+    // },
   ];
 
   return (
@@ -176,7 +176,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

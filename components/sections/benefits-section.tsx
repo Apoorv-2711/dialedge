@@ -65,8 +65,8 @@ export function BenefitsSection() {
             },
           ].map((benefit, index) => (
             <motion.div key={index} variants={fadeInUp}>
-              <Card className="text-center p-6 dark:bg-secondary/10 dark:border-secondary/20">
-                <CardContent>
+              <Card className="text-center p-6 dark:bg-secondary/10 dark:border-secondary/20 h-full">
+                <CardContent className="flex flex-col justify-between h-full">
                   <div className="text-3xl font-bold text-secondary mb-2 font-[family-name:var(--font-work-sans)]">
                     {benefit.metric}
                   </div>

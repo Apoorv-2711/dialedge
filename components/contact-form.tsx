@@ -1,7 +1,7 @@
 "use client";
 
 import type * as React from "react";
-import { useTransition, useState, useRef } from "react";
+import { useTransition, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import PhoneInput from "react-phone-number-input";
@@ -9,59 +9,56 @@ import "react-phone-number-input/style.css";
 import { toast as sonner } from "sonner";
 import { submitContact } from "@/actions/contact";
 import { Loader2, Phone } from "lucide-react";
-import Recaptcha, { type RecaptchaRef } from "@/components/recaptcha";
 
 export function ContactForm() {
   const [isPending, startTransition] = useTransition();
   const [phone, setPhone] = useState<string | undefined>(undefined);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<RecaptchaRef>(null);
 
-  function isBusinessEmail(email: string) {
-    const atIndex = email.lastIndexOf("@");
-    if (atIndex <= 0) return false;
-    const domain = email
-      .slice(atIndex + 1)
-      .toLowerCase()
-      .trim();
-    // Common free and disposable providers (non-exhaustive)
-    const blockedDomains = new Set([
-      "gmail.com",
-      "yahoo.com",
-      "yahoo.co.uk",
-      "hotmail.com",
-      "outlook.com",
-      "outlook.co.uk",
-      "live.com",
-      "msn.com",
-      "icloud.com",
-      "me.com",
-      "mac.com",
-      "aol.com",
-      "proton.me",
-      "protonmail.com",
-      "pm.me",
-      "gmx.com",
-      "gmx.de",
-      "mail.com",
-      "yandex.com",
-      "yandex.ru",
-      "zoho.com",
-      "fastmail.com",
-      "hey.com",
-      "duck.com",
-      "inbox.com",
-      "tutanota.com",
-      "tutanota.de",
-      "tuta.io",
-      "yopmail.com",
-    ]);
-    if (blockedDomains.has(domain)) return false;
-    // Simple heuristic: require a dot in the domain and no IP-literals
-    if (!domain.includes(".")) return false;
-    if (/^\d+\.\d+\.\d+\.\d+$/.test(domain)) return false;
-    return true;
-  }
+  // function isBusinessEmail(email: string) {
+  //   const atIndex = email.lastIndexOf("@");
+  //   if (atIndex <= 0) return false;
+  //   const domain = email
+  //     .slice(atIndex + 1)
+  //     .toLowerCase()
+  //     .trim();
+  //   // Common free and disposable providers (non-exhaustive)
+  //   const blockedDomains = new Set([
+  //     "gmail.com",
+  //     "yahoo.com",
+  //     "yahoo.co.uk",
+  //     "hotmail.com",
+  //     "outlook.com",
+  //     "outlook.co.uk",
+  //     "live.com",
+  //     "msn.com",
+  //     "icloud.com",
+  //     "me.com",
+  //     "mac.com",
+  //     "aol.com",
+  //     "proton.me",
+  //     "protonmail.com",
+  //     "pm.me",
+  //     "gmx.com",
+  //     "gmx.de",
+  //     "mail.com",
+  //     "yandex.com",
+  //     "yandex.ru",
+  //     "zoho.com",
+  //     "fastmail.com",
+  //     "hey.com",
+  //     "duck.com",
+  //     "inbox.com",
+  //     "tutanota.com",
+  //     "tutanota.de",
+  //     "tuta.io",
+  //     "yopmail.com",
+  //   ]);
+  //   if (blockedDomains.has(domain)) return false;
+  //   // Simple heuristic: require a dot in the domain and no IP-literals
+  //   if (!domain.includes(".")) return false;
+  //   if (/^\d+\.\d+\.\d+\.\d+$/.test(domain)) return false;
+  //   return true;
+  // }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -76,12 +73,12 @@ export function ContactForm() {
     }
 
     const email = String(fd.get("email") || "");
-    if (!isBusinessEmail(email)) {
-      sonner.error(
-        "Please use a business email address (no personal providers)."
-      );
-      return;
-    }
+    // if (!isBusinessEmail(email)) {
+    //   sonner.error(
+    //     "Please use a business email address (no personal providers)."
+    //   );
+    //   return;
+    // }
 
     // Check reCAPTCHA verification
     // if (!recaptchaToken) {
@@ -89,46 +86,39 @@ export function ContactForm() {
     //   return;
     // }
 
-    // startTransition(async () => {
-    //   await sonner.promise(
-    //     (async () => {
-    //       const res = await submitContact({
-    //         name: String(fd.get("name") || ""),
-    //         email,
-    //         phone: String(fd.get("phone") || ""),
-    //         company: String(fd.get("company") || ""),
-    //         recaptchaToken,
-    //       });
-    //       if (!res.ok) {
-    //         if (res.rateLimited && res.resetTime) {
-    //           const resetDate = new Date(res.resetTime);
-    //           const resetTimeStr = resetDate.toLocaleTimeString();
-    //           throw new Error(
-    //             `${res.error} You can try again after ${resetTimeStr}.`
-    //           );
-    //         }
-    //         throw new Error(res.error || "Submission failed");
-    //       }
-    //       return res;
-    //     })(),
-    //     {
-    //       loading: "Sending...",
-    //       success: () => {
-    //         form.reset();
-    //         setPhone(undefined);
-    //         setRecaptchaToken(null);
-    //         recaptchaRef.current?.reset();
-    //         return "Message sent. We'll reach out shortly.";
-    //       },
-    //       error: (err) => err.message || "Something went wrong",
-    //     }
-    //   );
-    // });
-    sonner.success("Message sent. We'll reach out shortly.");
-    form.reset();
+    startTransition(async () => {
+      await sonner.promise(
+        (async () => {
+          const res = await submitContact({
+            name: String(fd.get("name") || ""),
+            email,
+            phone: String(fd.get("phone") || ""),
+            company: String(fd.get("company") || ""),
+          });
+          if (!res.ok) {
+            if (res.rateLimited && res.resetTime) {
+              const resetDate = new Date(res.resetTime);
+              const resetTimeStr = resetDate.toLocaleTimeString();
+              throw new Error(
+                `${res.error} You can try again after ${resetTimeStr}.`
+              );
+            }
+            throw new Error(res.error || "Submission failed");
+          }
+          return res;
+        })(),
+        {
+          loading: "Sending...",
+          success: () => {
+            form.reset();
+            setPhone(undefined);
+            return "Message sent. We'll reach out shortly.";
+          },
+          error: (err) => err.message || "Something went wrong",
+        }
+      );
+    });
     setPhone(undefined);
-    setRecaptchaToken(null);
-    recaptchaRef.current?.reset();
   }
 
   return (
@@ -207,20 +197,6 @@ export function ContactForm() {
         </div>
       </div>
 
-      {/* reCAPTCHA */}
-      {/* <div className="mt-4">
-        <Recaptcha
-          ref={recaptchaRef}
-          onVerify={setRecaptchaToken}
-          onExpired={() => setRecaptchaToken(null)}
-          onError={() => {
-            setRecaptchaToken(null);
-            sonner.error("reCAPTCHA verification failed. Please try again.");
-          }}
-          className="flex justify-center"
-        />
-      </div> */}
-
       <Button
         type="submit"
         disabled={isPending}
@@ -231,7 +207,7 @@ export function ContactForm() {
         ) : (
           <div className="flex items-center gap-1">
             <Phone className="w-4 h-4" />
-            <span>Get a Call</span>
+            <span>Contact Us</span>
           </div>
         )}
       </Button>

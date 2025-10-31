@@ -252,7 +252,7 @@ export function ComparisonTableSection() {
         </div>
 
         {/* Detailed Feature Comparison */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -278,7 +278,6 @@ export function ComparisonTableSection() {
                 transition={{ duration: 0.6, delay: featureIndex * 0.1 }}
                 className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 dark:bg-secondary/10 dark:border-secondary/20"
               >
-                {/* Feature Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
                     {featureIndex === 0 && (
@@ -310,7 +309,6 @@ export function ComparisonTableSection() {
                   </div>
                 </div>
 
-                {/* Comparison Grid */}
                 <div className="grid lg:grid-cols-3 gap-4">
                   {competitors.map((competitor, compIndex) => {
                     const featureData = competitor.features[featureIndex];
@@ -334,7 +332,6 @@ export function ComparisonTableSection() {
                           }
                         `}
                       >
-                        {/* Company Name */}
                         <div className="flex items-center gap-2 mb-4">
                           {competitor.isPrimary && (
                             <Crown className="w-4 h-4 text-primary dark:text-primary-foreground" />
@@ -350,7 +347,6 @@ export function ComparisonTableSection() {
                           </span>
                         </div>
 
-                        {/* Feature Status */}
                         <div className="flex items-center gap-3">
                           {typeof featureData.value === "boolean" ? (
                             <>
@@ -405,7 +401,7 @@ export function ComparisonTableSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

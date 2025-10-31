@@ -188,7 +188,7 @@ export function formatDate(input: string | number): string {
 }
 
 export function absoluteUrl(path: string) {
-  return `https://www.aiplacers.com${path}`;
+  return `https://www.dialedge.ai${path}`;
 }
 
 // Utils from precedent.dev
@@ -260,7 +260,7 @@ export const getBlurDataURL = async (url: string | null) => {
   }
 
   if (url.startsWith("/_static/")) {
-    url = `${"https://www.aiplacers.com"}${url}`;
+    url = `${"https://www.dialedge.ai"}${url}`;
   }
 
   try {

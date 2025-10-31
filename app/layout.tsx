@@ -1,11 +1,9 @@
 import type React from "react";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Open_Sans, Work_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import "./globals.css";
-import ScrollToTop from "@/components/scroll-to-top";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -28,9 +26,10 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "DialEdge AI - Next-Gen Conversational AI Solutions",
+  title:
+    "DialEdge AI - Never miss a Call Again. Let our AI Voice Agent answer for you.",
   description:
-    "Transform your business communication with advanced conversational AI. Enterprise-grade phone systems, intelligent chat support, and automated workflows that scale your operations effortlessly.",
+    "DialEdge AI is a voice agent that can answer your calls for you. It can handle your calls 24/7 and can answer your calls in multiple languages.",
   keywords:
     "conversational AI, business communication, intelligent phone systems, chat support, automated workflows, enterprise AI, customer engagement, voice analytics, AI solutions",
   authors: [{ name: "DialEdge AI" }],
@@ -41,16 +40,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://dialedge.ai",
-    title: "DialEdge AI - Next-Gen Conversational AI Solutions",
+    title:
+      "DialEdge AI - Never miss a Call Again. Let our AI Voice Agent answer for you.",
     description:
-      "Transform your business communication with advanced conversational AI. Enterprise-grade solutions for modern businesses.",
+      "DialEdge AI is a voice agent that can answer your calls for you. It can handle your calls 24/7 and can answer your calls in multiple languages.",
     siteName: "DialEdge AI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DialEdge AI - Next-Gen Conversational AI Solutions",
+    title:
+      "DialEdge AI - Never miss a Call Again. Let our AI Voice Agent answer for you.",
     description:
-      "Transform your business communication with advanced conversational AI. Enterprise-grade solutions for modern businesses.",
+      "DialEdge AI is a voice agent that can answer your calls for you. It can handle your calls 24/7 and can answer your calls in multiple languages.",
     creator: "@dialedgeai",
   },
   icons: {
@@ -76,18 +77,6 @@ export default function RootLayout({
     >
       <body className="font-sans">
         {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NGCHRK3T8T"
-          strategy="afterInteractive"
-        />
-        <Script id="ga-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            gtag('js', new Date());
-            gtag('config', 'G-NGCHRK3T8T');
-          `}
-        </Script>
         <ThemeProvider defaultTheme="dark" storageKey="dialedge-theme">
           <main>{children}</main>
           <SonnerToaster richColors position="top-right" />

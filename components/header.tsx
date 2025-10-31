@@ -179,14 +179,14 @@ export function Header({ className }: HeaderProps) {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <Link href="#book-demo">
+          <Link href="/#contact">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-6 py-2 rounded-full shadow-lg">
-                Book a Demo
+                Contact Us
               </Button>
             </motion.div>
           </Link>
-          <Link href="#sign-up">
+          {/* <Link href="#sign-up">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
@@ -195,7 +195,7 @@ export function Header({ className }: HeaderProps) {
                 Sign Up
               </Button>
             </motion.div>
-          </Link>
+          </Link> */}
           <ThemeToggle />
         </div>
 

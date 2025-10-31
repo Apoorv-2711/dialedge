@@ -19,6 +19,7 @@ import {
   Globe,
   Shield,
   Zap,
+  Clock,
 } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,7 +54,7 @@ export function ContactFormSection() {
       {
         icon: Phone,
         title: "AI Receptionist",
-        description: "24/7 call handling and routing",
+        description: "24/7 call handling",
       },
       {
         icon: Calendar,
@@ -86,10 +87,10 @@ export function ContactFormSection() {
 
   const stats = useMemo(
     () => [
-      { icon: Users, value: "10K+", label: "Active Users" },
-      { icon: Globe, value: "50+", label: "Countries" },
+      { icon: Users, value: "100+", label: "Active Users" },
+      { icon: Clock, value: "24/7", label: "Support Available" },
       { icon: CheckCircle2, value: "99.9%", label: "Uptime" },
-      { icon: Shield, value: "SOC2", label: "Certified" },
+      // { icon: Shield, value: "SOC2", label: "Certified" },
     ],
     []
   );
@@ -104,7 +105,7 @@ export function ContactFormSection() {
   }
 
   return (
-    <section id="contact" className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.03]" />
@@ -150,7 +151,7 @@ export function ContactFormSection() {
         />
       </div>
 
-      <div className="container relative z-10">
+      <div id="contact" className="container relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -188,7 +189,7 @@ export function ContactFormSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -330,7 +331,6 @@ export function ContactFormSection() {
               </Card>
 
               {/* Floating Badge */}
-            
             </div>
           </motion.div>
         </div>
