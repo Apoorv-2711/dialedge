@@ -54,7 +54,7 @@ export function ContactFormSection() {
       {
         icon: Phone,
         title: "AI Receptionist",
-        description: "24/7 call handling",
+        description: "Handle Calls 24/7",
       },
       {
         icon: Calendar,
@@ -64,7 +64,7 @@ export function ContactFormSection() {
       {
         icon: ClipboardList,
         title: "Lead Qualification",
-        description: "Smart prospect screening",
+        description: "Identify and Enguage High-Value Prospects ",
       },
       {
         icon: MessageSquare,
@@ -79,7 +79,7 @@ export function ContactFormSection() {
       {
         icon: Banknote,
         title: "Sales Assistant",
-        description: "Revenue generation calls",
+        description: "Close More Deals",
       },
     ],
     []
@@ -219,7 +219,7 @@ export function ContactFormSection() {
           >
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-                Powerful AI Solutions for Every Industry
+                Enterprise-Grade AI That Adapt to You
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 From healthcare to finance, our AI assistants adapt to your
@@ -312,15 +312,15 @@ export function ContactFormSection() {
                         Book Your Demo
                       </CardTitle>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Typically responds within 1 hour
+                        
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 text-sm">
-                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                    {/* <div className="w-2 h-2 bg-primary rounded-full animate-pulse" /> */}
                     <span className="text-muted-foreground">
-                      Our team is online now
+                      Our Team will connect with you and help you find the right solution for your Business.
                     </span>
                   </div>
                 </CardHeader>

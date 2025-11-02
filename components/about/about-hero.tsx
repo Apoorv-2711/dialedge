@@ -104,10 +104,7 @@ export default function AboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <Link
-              href="https://calendly.com/bg-aiplacers/new-meeting"
-              target="_blank"
-            >
+            <Link href="#contact">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 cursor-pointer"
@@ -115,7 +112,7 @@ export default function AboutHero() {
                 Book a Demo
               </Button>
             </Link>
-            <Link href="https://app.aiplacers.com/" target="_blank">
+            <Link href="#contact">
               <Button
                 size="lg"
                 variant="outline"

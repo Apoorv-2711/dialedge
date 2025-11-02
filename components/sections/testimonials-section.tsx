@@ -18,39 +18,39 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "Our AI receptionist handles 200+ calls daily with perfect accuracy. It's like having a superhuman employee that never gets tired or makes mistakes.",
-      author: "Sarah Johnson",
+      "We used to book appointments manually, and most patients couldn’t get an appointment since so many people were calling in a go.DialEdge solved this problem for us. Now appointments are automated and synced to my google suit.",
+      author: "Doctor Neha Sharma",
       role: "CEO",
-      company: "TechStart Inc.",
+      company: "Private Clinic",
       avatar: "/professional-woman-ceo.png",
       metric: "200+ calls/day",
       improvement: "+95% accuracy",
       icon: Phone,
-      industry: "Technology",
+      industry: "Healthcare & Clinics",
     },
     {
       quote:
-        "The AI concierge increased our reservations by 40% and eliminated booking errors completely. Our customers love instant response time.",
-      author: "Michael Chen",
+        "We get hundreds of calls every week from students and parents asking about batches, fees, and demo classes. DialEdge has taken that entire workload off our front desk. Things have become a lot less chaotic",
+      author: "Ankit Sen",
       role: "Owner",
-      company: "Bella Vista Restaurant",
+      company: "Big Path Coaching Center",
       avatar: "/restaurant-owner-man.png",
       metric: "+40% reservations",
       improvement: "0% booking errors",
       icon: Building2,
-      industry: "Hospitality",
+      industry: "Coaching & Education",
     },
     {
       quote:
-        "Our AI appointment setter books 3x more meetings than our previous human team. The ROI has been absolutely incredible for our sales pipeline.",
-      author: "Emily Rodriguez",
-      role: "VP Sales",
-      company: "Growth Marketing Co.",
+        "Before we purchased this AI solution, we used to have a person who was not able to handle call volumes during peak hours. Conversion rate was also not satisfactory. But DialEdge had been a game changer. We are now  being able to clear all the queries and have seen a significant spike in our site visit bookings as well. ",
+      author: "Oavish kalim",
+      role: "Managing Partner",
+      company: "Kalim Group of Companies.",
       avatar: "/professional-woman-vp-sales.png",
       metric: "3x more meetings",
       improvement: "Incredible ROI",
       icon: MessageSquare,
-      industry: "Marketing",
+      industry: "Real Estate",
     },
   ];
 
@@ -127,9 +127,9 @@ export function TestimonialsSection() {
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-foreground">Trusted by </span>
+            <span className="text-foreground">Real Stories from </span>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Industry Leaders
+              Real Businesses
             </span>
           </h2>
 

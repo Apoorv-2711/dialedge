@@ -21,9 +21,9 @@ import {
 export function ServicesSection() {
   const services = [
     {
-      title: "AI-Powered Phone System",
+      title: "AI-Powered Call System",
       description:
-        "Advanced call handling, natural conversation handling, and 24/7 customer support with intelligent voice recognition.",
+        "Handle every call with natural, human-like conversations, powered by advanced speech recognition and real-time intelligence.",
       icon: Phone,
       features: [
         "Smart Call Handling",
@@ -35,12 +35,12 @@ export function ServicesSection() {
     {
       title: "Conversational Chat AI",
       description:
-        "Multi-channel chat support across web, mobile, and social platforms with contextual understanding and personalization.",
+        "Offer instant, personalized support across web, mobile, and social platforms. Engage customers contextually, anytime, anywhere.",
       icon: MessageSquare,
       features: [
         "Multi-Channel Support",
         "Context Awareness",
-        "Real-time Responses",
+        "Real-Time Responses",
       ],
       category: "Chat Solutions",
     },
@@ -59,7 +59,7 @@ export function ServicesSection() {
     {
       title: "Workflow Automation",
       description:
-        "Seamless integration with existing systems to automate repetitive tasks and streamline business operations.",
+        "Integrate seamlessly with your existing tools to automate repetitive tasks, eliminate manual effort, and streamline business operations.",
       icon: Zap,
       features: [
         "System Integration",
@@ -71,7 +71,7 @@ export function ServicesSection() {
     {
       title: "Smart Scheduling",
       description:
-        "Intelligent appointment management with automated booking, reminders, and calendar synchronization.",
+        "Simplify appointment management with intelligent booking, reminders, and calendar synchronisation, so you never miss a meeting again.",
       icon: Clock,
       features: ["Auto Booking", "Smart Reminders", "Calendar Sync"],
       category: "Scheduling",

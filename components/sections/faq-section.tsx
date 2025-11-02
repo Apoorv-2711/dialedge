@@ -154,9 +154,9 @@ export function FaqSection({ additionalInfoSection }: Props) {
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-foreground">Frequently Asked </span>
+            <span className="text-foreground">Got Questions? </span>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Questions
+              We've Got Answers
             </span>
           </h2>
 

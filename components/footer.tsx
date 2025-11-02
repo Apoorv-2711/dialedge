@@ -122,21 +122,21 @@ export function Footer({ className }: FooterProps) {
               viewport={{ once: true }}
             >
               <h3 className="font-semibold mb-6 text-lg text-foreground">
-                Company
+                Quick Links
               </h3>
               <ul className="space-y-4">
                 {[
                   {
-                    name: "Services",
+                    name: "Home",
                     href: "/#services",
                   },
                   {
-                    name: "How It Works",
-                    href: "/#how-it-works",
+                    name: "About",
+                    href: "/#about",
                   },
                   {
-                    name: "Testimonials",
-                    href: "/#testimonials",
+                    name: "Contact",
+                    href: "/#contact",
                   },
                   {
                     name: "Pricing",
@@ -144,7 +144,7 @@ export function Footer({ className }: FooterProps) {
                   },
                   {
                     name: "Terms & Conditions",
-                    href: "",
+                    href: "#terms & Conditions",
                   },
                 ].map((item) => (
                   <li key={item.name}>
@@ -191,7 +191,7 @@ export function Footer({ className }: FooterProps) {
               </ul>
             </motion.div> */}
 
-            {/* Resources Column */}
+            {/* Solutions Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -203,18 +203,33 @@ export function Footer({ className }: FooterProps) {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Documentation",
-                  "API Reference",
-                  "Tutorials",
-                  "Support",
-                  "Community",
+                  {
+                    name: "Features",
+                    href: "#services",
+                  },
+                  {
+                    name: "How It Works",
+                    href: "/#how-it-works",
+                  },
+                  {
+                    name: "Use Cases",
+                    href: "/use-cases",
+                  },
+                  {
+                    name: "Benefits",
+                    href: "/#benefits",
+                  },
+                  {
+                    name: "Testimonials",
+                    href: "/#testimonials",
+                  },
                 ].map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <a
-                      href="#"
+                      href={item.href}
                       className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}

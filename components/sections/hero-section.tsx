@@ -122,15 +122,15 @@ export function HeroSection() {
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                 <span className="block text-gray-900 dark:text-white">
-                  Transform Your
+                  Transform The Way
                 </span>
                 <span className="block">
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Customer Experience
+                    You Talk to Your Costumers
                   </span>
                 </span>
                 <span className="block text-gray-900 dark:text-white">
-                  with AI
+                  With DialEdge AI
                 </span>
               </h1>
             </motion.div>
@@ -142,9 +142,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
             >
-              Deploy intelligent conversational AI that handles calls, chats,
-              and customer interactions 24/7. Scale your business with
-              enterprise-grade automation that learns and adapts.
+              Deliver seamless customer experiences 24/7 through smart, multilingual voice automation..
             </motion.p>
 
             {/* Feature Highlights */}
@@ -178,7 +176,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="#book-demo">
+              <Link href="#contact">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -196,19 +194,21 @@ export function HeroSection() {
                 </motion.div>
               </Link>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="font-semibold px-8 py-6 rounded-2xl border-2 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 w-full sm:w-auto"
+              <Link href="#contact">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <Play className="w-4 h-4 mr-2" />
-                  Watch Demo
-                </Button>
-              </motion.div>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="font-semibold px-8 py-6 rounded-2xl border-2 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 w-full sm:w-auto"
+                  >
+                    <Play className="w-4 h-4 mr-2" />
+                    Watch Demo
+                  </Button>
+                </motion.div>
+              </Link>
             </motion.div>
 
             {/* Trust Indicators */}
@@ -233,151 +233,55 @@ export function HeroSection() {
             </motion.div> */}
           </div>
 
-          {/* Right Column - Visual */}
+          {/* Right Column - CTA Widget */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative lg:block hidden"
           >
-            <div className="relative">
-              {/* Main Card */}
-              <motion.div
-                className="relative bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 shadow-2xl dark:bg-secondary/10"
-                animate={{
-                  y: [-10, 10, -10],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                      <Bot className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-card-foreground">
-                        AI Assistant
-                      </h3>
-                      <p className="text-sm text-muted-foreground">Online</p>
-                    </div>
-                  </div>
-                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                </div>
+            <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 shadow-2xl dark:bg-secondary/10">
+              <div className="text-center space-y-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-card-foreground">
+                  Don't believe us?
+                  <br />
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Have our AI give you a call.
+                  </span>
+                </h3>
 
-                {/* Chat Interface */}
                 <div className="space-y-4">
-                  <motion.div
-                    className="flex items-start gap-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 }}
-                  >
-                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                      <Bot className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="bg-secondary/20 border border-secondary/30 rounded-2xl rounded-tl-md px-4 py-3 max-w-xs">
-                      <p className="text-sm text-card-foreground">
-                        👋 Hi! I'm your AI assistant. How can I help you today?
-                      </p>
-                    </div>
-                  </motion.div>
+                  <input
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  />
 
-                  <motion.div
-                    className="flex items-start gap-3 justify-end"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5 }}
-                  >
-                    <div className="bg-gradient-to-r from-primary to-secondary text-white rounded-2xl rounded-tr-md px-4 py-3 max-w-xs">
-                      <p className="text-sm">
-                        I need help scheduling a meeting with my team for next
-                        week.
-                      </p>
-                    </div>
-                    <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-gradient-to-br from-primary/60 to-secondary/60 rounded-full" />
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="flex items-start gap-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2 }}
-                  >
-                    <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                      <Bot className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="bg-secondary/20 border border-secondary/30 rounded-2xl rounded-tl-md px-4 py-3 max-w-xs">
-                      <p className="text-sm text-card-foreground">
-                        ✅ Perfect! I can help you schedule that. I've checked
-                        everyone's calendar and found 3 available slots...
-                      </p>
-                    </div>
-                  </motion.div>
+                  <Link href="#contact">
+                    <Button
+                      size="lg"
+                      className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-semibold py-6 rounded-xl shadow-lg"
+                    >
+                      Let's Talk
+                    </Button>
+                  </Link>
                 </div>
 
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">98%</div>
-                    <div className="text-xs text-muted-foreground">
-                      Satisfaction
-                    </div>
+                <div className="pt-4 space-y-3 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <span>Instant AI-powered call</span>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">
-                      &lt;2s
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Response
-                    </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <span>No commitment required</span>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">24/7</div>
-                    <div className="text-xs text-muted-foreground">
-                      Available
-                    </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <span>Experience it yourself</span>
                   </div>
                 </div>
-              </motion.div>
-
-              {/* Floating Elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg"
-                animate={{
-                  rotate: [0, 10, 0],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-              >
-                <Zap className="w-8 h-8 text-white" />
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center shadow-lg"
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2,
-                }}
-              >
-                <CheckCircle2 className="w-6 h-6 text-white" />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

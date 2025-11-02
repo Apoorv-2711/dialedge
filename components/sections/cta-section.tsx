@@ -59,17 +59,21 @@ export function CTASection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Start Free Trial
-              </motion.button>
+              <Link href="#contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Start Free Trial
+                </motion.button>
+              </Link>
 
-              <button className="text-primary font-medium px-6 py-4 rounded-2xl border border-primary/30 hover:bg-primary/10 transition-all duration-300">
-                View All Features
-              </button>
+              <Link href="#contact">
+                <button className="text-primary font-medium px-6 py-4 rounded-2xl border border-primary/30 hover:bg-primary/10 transition-all duration-300">
+                  View All Features
+                </button>
+              </Link>
             </div>
           </div>
 
