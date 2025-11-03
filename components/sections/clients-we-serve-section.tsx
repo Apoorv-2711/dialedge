@@ -164,7 +164,7 @@ export function ClientsWeServeSection() {
               <div className="grid grid-cols-2 gap-6 pt-6">
                 <div className="text-center p-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl dark:bg-secondary/10">
                   <div className="text-2xl font-bold text-primary mb-1">
-                    200+
+                    100+
                   </div>
                   <div className="text-sm text-muted-foreground">
                     Happy Clients
