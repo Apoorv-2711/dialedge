@@ -106,7 +106,7 @@ export default function FeatureHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <Link href="#contact">
+              <Link href="/#book-demo">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 cursor-pointer"
@@ -114,7 +114,7 @@ export default function FeatureHero() {
                   Book a Demo
                 </Button>
               </Link>
-              <Link href="#contact">
+              <Link href="/#book-demo">
                 <Button
                   size="lg"
                   variant="outline"

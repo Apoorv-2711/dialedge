@@ -176,38 +176,30 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="#contact">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+              <Link href="#book-demo" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg transition-all duration-300 w-full"
                 >
-                  <Button
-                    size="lg"
-                    className="group relative overflow-hidden bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-semibold px-8 py-6 rounded-2xl shadow-lg transition-all duration-300 w-full sm:w-auto"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <Sparkles className="w-5 h-5" />
-                      Book Demo
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
-                </motion.div>
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    Book Demo
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
               </Link>
 
-              <Link href="#contact">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+              <Link href="#book-demo" className="w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="font-semibold px-8 py-6 rounded-2xl border-2 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 w-full"
                 >
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="font-semibold px-8 py-6 rounded-2xl border-2 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 w-full sm:w-auto"
-                  >
-                    <Play className="w-4 h-4 mr-2" />
+                  <span className="flex items-center justify-center gap-2">
+                    <Play className="w-4 h-4" />
                     Watch Demo
-                  </Button>
-                </motion.div>
+                  </span>
+                </Button>
               </Link>
             </motion.div>
 
@@ -238,11 +230,11 @@ export function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative lg:block hidden"
+            className="relative"
           >
-            <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 shadow-2xl dark:bg-secondary/10">
-              <div className="text-center space-y-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-card-foreground">
+            <div className="relative bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-6 sm:p-8 shadow-2xl dark:bg-secondary/10">
+              <div className="text-center space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-card-foreground">
                   Don't believe us?
                   <br />
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -257,7 +249,7 @@ export function HeroSection() {
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   />
 
-                  <Link href="#contact">
+                  <Link href="#book-demo" className="block w-full">
                     <Button
                       size="lg"
                       className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground font-semibold py-6 rounded-xl shadow-lg"

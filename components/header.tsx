@@ -179,7 +179,7 @@ export function Header({ className }: HeaderProps) {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <Link href="/#contact">
+          <Link href="/#book-demo">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-6 py-2 rounded-full shadow-lg">
                 Contact Us

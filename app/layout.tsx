@@ -75,7 +75,7 @@ export default function RootLayout({
       className={`${geist.variable} ${workSans.variable} ${openSans.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         {/* Google Analytics */}
         <ThemeProvider defaultTheme="dark" storageKey="dialedge-theme">
           <main>{children}</main>

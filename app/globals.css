@@ -420,7 +420,8 @@
   }
 }
 
-/* Smooth scroll */
+/* Smooth scroll with padding for sticky header */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for sticky header height */
 }

@@ -105,7 +105,7 @@ export function ContactFormSection() {
   }
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section id="contact" className="relative py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.03]" />
@@ -151,7 +151,7 @@ export function ContactFormSection() {
         />
       </div>
 
-      <div id="contact" className="container relative z-10">
+      <div className="container relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -281,6 +281,7 @@ export function ContactFormSection() {
 
           {/* Right Column - Contact Form */}
           <motion.div
+            id="book-demo"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

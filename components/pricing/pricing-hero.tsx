@@ -57,7 +57,7 @@ export default function PricingHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Link href="#contact">
+            <Link href="/#book-demo">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 cursor-pointer"
@@ -65,7 +65,7 @@ export default function PricingHero() {
                 Start Free Trial
               </Button>
             </Link>
-            <Link href="#contact">
+            <Link href="/#book-demo">
               <Button
                 size="lg"
                 variant="outline"
