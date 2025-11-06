@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   Star,
   Quote,
   Users,
   Phone,
-  CheckCircle2,
   Award,
   Building2,
   MessageSquare,
@@ -18,11 +16,10 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-      "We used to book appointments manually, and most patients couldn’t get an appointment since so many people were calling in a go.DialEdge solved this problem for us. Now appointments are automated and synced to my google suit.",
-      author: "Doctor Neha Sharma",
+      "We used to book appointments manually, and most patients couldn't get an appointment since so many people were calling in a go.DialEdge solved this problem for us. Now appointments are automated and synced to my google suit.",
+      author: "Dr Neha Sharma",
       role: "CEO",
       company: "Private Clinic",
-      avatar: "/professional-woman-ceo.png",
       metric: "200+ calls/day",
       improvement: "+95% accuracy",
       icon: Phone,
@@ -34,7 +31,6 @@ export function TestimonialsSection() {
       author: "Ankit Sen",
       role: "Owner",
       company: "Big Path Coaching Center",
-      avatar: "/restaurant-owner-man.png",
       metric: "+40% reservations",
       improvement: "0% booking errors",
       icon: Building2,
@@ -43,10 +39,9 @@ export function TestimonialsSection() {
     {
       quote:
         "Before we purchased this AI solution, we used to have a person who was not able to handle call volumes during peak hours. Conversion rate was also not satisfactory. But DialEdge had been a game changer. We are now  being able to clear all the queries and have seen a significant spike in our site visit bookings as well. ",
-      author: "Oavish kalim",
+      author: "Oavish Kalim",
       role: "Managing Partner",
       company: "Kalim Group of Companies.",
-      avatar: "/professional-woman-vp-sales.png",
       metric: "3x more meetings",
       improvement: "Incredible ROI",
       icon: MessageSquare,
@@ -187,26 +182,7 @@ export function TestimonialsSection() {
                   </blockquote>
 
                   {/* Author */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-                    <div className="relative">
-                      <Avatar className="w-14 h-14 ring-2 ring-primary/20">
-                        <AvatarImage
-                          src={testimonial.avatar || "/placeholder.svg"}
-                          alt={testimonial.author}
-                          className="object-cover"
-                        />
-                        <AvatarFallback className="bg-gradient-to-br from-primary/20 to-secondary/20 text-lg font-semibold">
-                          {testimonial.author
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full border-2 border-background flex items-center justify-center">
-                        <CheckCircle2 className="w-3 h-3 text-primary-foreground" />
-                      </div>
-                    </div>
-
+                  <div className="flex items-center justify-between pt-4 border-t border-border/50">
                     <div className="flex-1">
                       <div className="font-bold text-card-foreground text-lg">
                         {testimonial.author}

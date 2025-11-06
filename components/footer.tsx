@@ -92,6 +92,10 @@ export function Footer({ className }: FooterProps) {
                   name: "Terms & Conditions",
                   href: "/terms",
                 },
+                {
+                  name: "Privacy Policy",
+                  href: "/privacy",
+                },
               ].map((item) => (
                 <li key={item.name}>
                   <a

@@ -15,7 +15,7 @@ import Image from "next/image";
 import { useTheme } from "./theme-provider";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 
@@ -26,11 +26,75 @@ interface HeaderProps {
 export function Header({ className }: HeaderProps) {
   const { theme } = useTheme();
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const scrollToElement = (elementId: string) => {
+    // Try multiple times to ensure element is found
+    let attempts = 0;
+    const maxAttempts = 5;
+
+    const tryScroll = () => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else if (attempts < maxAttempts) {
+        attempts++;
+        setTimeout(tryScroll, 200);
+      }
+    };
+
+    tryScroll();
+  };
+
+  const handleMobileNavClick = (sectionId: string) => {
+    // Close menu immediately
+    setOpen(false);
+
+    if (pathname !== '/') {
+      // Navigate to home first, then scroll
+      router.push('/');
+      setTimeout(() => scrollToElement(sectionId), 1000);
+    } else {
+      // Already on home, just scroll after menu closes
+      setTimeout(() => scrollToElement(sectionId), 500);
+    }
+  };
+
+  const handleNavClick = (href: string, e?: React.MouseEvent) => {
+    e?.preventDefault();
+    setOpen(false);
+
+    if (href.includes('#')) {
+      const [path, hash] = href.split('#');
+      if (pathname === '/' || pathname === path) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        router.push(href);
+      }
+    } else {
+      router.push(href);
+    }
+  };
 
   const MotionLink = motion(Link);
 
@@ -63,8 +127,8 @@ export function Header({ className }: HeaderProps) {
     // { name: "About Us", href: "/about", isActive: pathname === "/about" },
     {
       name: "Contact Us",
-      href: "/#contact",
-      isActive: pathname === "/#contact",
+      href: "/#book-demo",
+      isActive: pathname === "/#book-demo",
     },
   ];
 
@@ -89,6 +153,7 @@ export function Header({ className }: HeaderProps) {
                   className={cn(
                     "group flex h-full flex-row items-center gap-0.5 text-sm"
                   )}
+                  onClick={(e) => handleNavClick(item.href, e)}
                 >
                   {item.name}
                   <ChevronDown className="size-[14px] transition-transform duration-300 group-hover:rotate-180 group-hover:transform" />
@@ -127,7 +192,7 @@ export function Header({ className }: HeaderProps) {
               </HoverCardContent>
             </HoverCard>
           ) : (
-            <Link href={item.href}>{item.name}</Link>
+            <Link href={item.href} onClick={(e) => handleNavClick(item.href, e)}>{item.name}</Link>
           )}
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
         </motion.div>
@@ -179,7 +244,7 @@ export function Header({ className }: HeaderProps) {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <Link href="/#book-demo">
+          <Link href="/#book-demo" onClick={(e) => handleNavClick('/#book-demo', e)}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-6 py-2 rounded-full shadow-lg">
                 Contact Us
@@ -232,49 +297,50 @@ export function Header({ className }: HeaderProps) {
 
               {/* Mobile Navigation */}
               <nav className="flex flex-col space-y-6 mt-8 px-6">
-                {navigationItems.map((item) => (
-                  <MotionLink
-                    key={item.name}
-                    href={item.href}
-                    className={cn(
-                      "text-lg font-medium hover:text-primary transition-all duration-300 py-2 border-b border-border/20 ",
-                      item.isActive && "text-primary"
-                    )}
-                    onClick={() => {
-                      setOpen(false);
-                    }}
-                    whileHover={{ x: 10 }}
-                  >
-                    {item.name}
-                  </MotionLink>
-                ))}
+                {navigationItems.map((item) => {
+                  const sectionId = item.href.split('#')[1] || '';
+                  return (
+                    <motion.button
+                      key={item.name}
+                      type="button"
+                      className={cn(
+                        "text-lg font-medium hover:text-primary transition-all duration-300 py-2 border-b border-border/20 text-left",
+                        item.isActive && "text-primary"
+                      )}
+                      onClick={() => handleMobileNavClick(sectionId)}
+                      whileHover={{ x: 10 }}
+                    >
+                      {item.name}
+                    </motion.button>
+                  );
+                })}
               </nav>
 
               {/* Mobile Buttons */}
               <div className="flex flex-col gap-4 mt-8 px-6">
-                <Link href="#book-demo">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    onClick={() => handleMobileNavClick('book-demo')}
+                    className="w-full bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 rounded-full shadow-lg"
                   >
-                    <Button className="w-full bg-gradient-to-r cursor-pointer from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 rounded-full shadow-lg">
-                      Book a Demo
-                    </Button>
-                  </motion.div>
-                </Link>
-                <Link href="#sign-up" target="_blank">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    Book a Demo
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    onClick={() => handleMobileNavClick('book-demo')}
+                    variant="outline"
+                    className="w-full border-2 border-primary/50 cursor-pointer hover:border-primary bg-transparent hover:bg-primary/10 text-primary dark:text-white py-3 font-semibold rounded-full backdrop-blur-sm dark:border-primary dark:hover:border-primary/80 dark:hover:bg-primary/10"
                   >
-                    <Button
-                      variant="outline"
-                      className="w-full border-2 border-primary/50 cursor-pointer hover:border-primary bg-transparent hover:bg-primary/10 text-primary dark:text-white py-3 font-semibold rounded-full backdrop-blur-sm dark:border-primary dark:hover:border-primary/80 dark:hover:bg-primary/10"
-                    >
-                      Sign Up
-                    </Button>
-                  </motion.div>
-                </Link>
+                    Sign Up
+                  </Button>
+                </motion.div>
               </div>
             </SheetContent>
           </Sheet>

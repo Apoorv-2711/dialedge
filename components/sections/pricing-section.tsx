@@ -119,10 +119,10 @@ export function PricingSection({ isShowHeader = true }: Props) {
         >
           {[
             {
-              name: "💼 Starter",
+              name: "Starter",
               subtitle: "For Small Businesses",
               monthlyPrice: 3999,
-              yearlyPrice: 33592,
+              yearlyPrice: 33999,
               originalYearlyPrice: 47988,
               description:
                 "Perfect for small businesses getting started with AI voice automation.",
@@ -133,7 +133,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                 "Basic integration; CRM and calendar tools",
               ],
               cta: "Start Free Trial",
-              ctaLink: "#contact",
+              ctaLink: "#book-demo",
               ctaDescription: "7-day free trial • Setup assistance included",
               popular: false,
             },
@@ -141,8 +141,8 @@ export function PricingSection({ isShowHeader = true }: Props) {
               name: "Growth",
               subtitle: "Most Popular",
               monthlyPrice: 5999,
-              yearlyPrice: 50392,
-              originalYearlyPrice: 71988,
+              yearlyPrice: 49999,
+              originalYearlyPrice: 71999,
               description: "Ideal for growing businesses looking to scale customer communication.",
               header: "Everything in Starter, plus:",
               features: [
@@ -152,7 +152,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                 "Advanced integrations; Multiple CRM platforms",
               ],
               cta: "Start Free Trial",
-              ctaLink: "#contact",
+              ctaLink: "#book-demo",
               ctaDescription: "7-day free trial • Dedicated onboarding",
               popular: true,
             },
@@ -175,7 +175,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
                 "24/7 priority support; Instant expert assistance",
               ],
               cta: "Contact Sales",
-              ctaLink: "#contact",
+              ctaLink: "#book-demo",
               ctaDescription: "Custom pricing • Volume discounts available",
               popular: false,
             },
@@ -334,7 +334,7 @@ export function PricingSection({ isShowHeader = true }: Props) {
           viewport={{ once: true }}
         >
           <p className="text-sm text-muted-foreground max-w-4xl mx-auto">
-            All plans include: English & Hindi support • No-code setup • 24/7
+            All plans include: English & Hindi support • 24/7
             availability • Cancel anytime • GST applicable
           </p>
         </motion.div>

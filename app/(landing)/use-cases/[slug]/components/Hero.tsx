@@ -109,7 +109,7 @@ export function Hero({
                   Book a Demo
                 </Button>
               </Link>
-              <Link href="https://app.aiplacers.com/" target="_blank">
+              <Link href="/#book-demo">
                 <Button
                   size="lg"
                   variant="outline"

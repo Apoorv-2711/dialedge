@@ -146,7 +146,7 @@ export function ComparisonTableSection() {
 
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             See how we compare to other AI voice solutions and discover why
-            thousands of businesses choose DialEdge AI for their conversational
+            hundreds of businesses choose DialEdge AI for their conversational
             AI needs.
           </p>
         </motion.div>

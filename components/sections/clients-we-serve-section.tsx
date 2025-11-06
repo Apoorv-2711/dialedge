@@ -229,9 +229,9 @@ export function ClientsWeServeSection() {
 
                       {/* Hover Arrow */}
                       <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        <span className="text-sm text-primary font-medium">
+                        {/* <span className="text-sm text-primary font-medium">
                           Learn more
-                        </span>
+                        </span> */}
                         <ArrowRight className="w-4 h-4 text-primary" />
                       </div>
                     </div>

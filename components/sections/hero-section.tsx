@@ -11,7 +11,6 @@ import {
   Zap,
   Shield,
   ArrowRight,
-  Play,
   CheckCircle2,
 } from "lucide-react";
 import Link from "next/link";
@@ -185,19 +184,6 @@ export function HeroSection() {
                     <Sparkles className="w-5 h-5" />
                     Book Demo
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-              </Link>
-
-              <Link href="#book-demo" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="font-semibold px-8 py-6 rounded-2xl border-2 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-300 w-full"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <Play className="w-4 h-4" />
-                    Watch Demo
                   </span>
                 </Button>
               </Link>
