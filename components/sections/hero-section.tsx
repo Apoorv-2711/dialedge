@@ -229,11 +229,11 @@ export function HeroSection() {
                 </h3>
 
                 <div className="space-y-4">
-                  <input
+                  {/* <input
                     type="tel"
                     placeholder="Your Phone Number"
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  />
+                  /> */}
 
                   <Link href="#book-demo" className="block w-full">
                     <Button
